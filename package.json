@@ -1,0 +1,25 @@
+{
+    "name": "vscode-epl",
+    "displayName": "vscode-epl",
+    "description": "Embperl language support",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.34.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "epl",
+            "aliases": ["EmbPerl", "epl"],
+            "extensions": [".epl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "epl",
+            "scopeName": "source.perl.embperl",
+            "path": "./syntaxes/epl.tmLanguage.json"
+        }]
+    }
+}

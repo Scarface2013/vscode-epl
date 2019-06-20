@@ -1,0 +1,115 @@
+{
+    "scopeName": "source.perl.embperl",
+    "name": "EmbPerl",
+    "fileTypes": [
+        "epl"
+    ],
+    "patterns": [
+        {
+            "include": "text.html.basic"
+        }
+    ],
+    "injections": {
+        "source.perl.embperl": {
+            "patterns": [
+                {
+                    "begin": "\\[(!|-|\\*|\\+)",
+                    "end": "\\1\\]",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.begin.embperl"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.end.embperl"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.perl"
+                        }
+                    ],
+                    "name": "text.html.embperl.perl"
+                },
+                {
+                    "begin": "\\[#",
+                    "end": "#\\]",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "comment.block.begin.embperl"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "comment.block.end.embperl"
+                        }
+                    },
+                    "name": "comment.block.embperl"
+                },
+                {
+                    "begin": "\\[\\s+\\$(var)",
+                    "end": "\\$\\]",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.begin.embperl"
+                        },
+                        "1": {
+                            "name": "keyword.control.embperl"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.end.embperl"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.perl#variable"
+                        }
+                    ],
+                    "name": "text.html.embperl.vars"
+                },
+                {
+                    "begin": "\\[=",
+                    "end": "=\\]",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.begin.embperl"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.end.embperl"
+                        }
+                    },
+                    "name": "string.localizable.embperl"
+                },
+                {
+                    "begin": "\\[\\$",
+                    "end": "\\$\\]",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.begin.embperl"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.end.embperl"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.perl"
+                        },
+                        {
+                            "match": "(if|elsif|endif|while|endwhile|do|until|foreach|endforeach|next|last|redo|hidden|var|sub|(dump (out|err|pre|log)))",
+                            "name": "keyword.control.embperl"
+                        }
+                    ],
+                    "name": "text.html.embperl.control"
+                }
+            ]
+        }
+    }
+}
